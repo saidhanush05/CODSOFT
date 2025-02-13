@@ -1,0 +1,43 @@
+import random
+print("Rock 🪨,Paper 📃,Scissor ✂️ Game 🤩")
+player_score=0
+computer_score=0
+match_tie=0
+
+user=input("DO You Wanna Play❓\nTo play type Yes/To Quit Type No : ").upper()
+if user=="YES":
+    print("LETS PLAY THE GAME 🤩")
+    while True:
+        computer=random.choice(["ROCK","PAPER","SCISSOR"])
+    
+        user_choice=input("CHOSSE YOUR CHOICE : Rock 🪨, Paper 📃, Scissor ✂️ : ").upper()
+
+        print(f"🤖 COMPUTER CHOSE : {computer}")
+        print(f"👦 YOU CHOSE : {user_choice}")
+    
+        print()
+        if user_choice==computer:
+            print("MATCH TIE! 🥶")
+            match_tie+=1
+            print()
+
+        elif (user_choice=="ROCK" and computer=="PAPER") or (user_choice=="PAPER" and computer=="SCISSOR") or (user_choice=="SCISSOR" and computer=="ROCK"):
+            print("🤖 COMPUTER WON!☠️ ")
+            computer_score +=1
+            print()
+
+        else:
+            print("CONGRATULATIONS! 🎉\nYOU WON THE MATCH 🤩")
+            player_score+=1
+            print()
+        
+            user=input("Do YOU WANNA PLAY AGAIN ❓\nTYPE YES TO PLAY AGAIN / TYPE NO TO EXIT:").upper()
+            if user=="YES":
+                print("LETS PLAY AGAIN 🤩")
+                continue
+            else:
+                print("GAME EXITED 🚀")
+                print(f"TOTAL SCORE : 👦 YOUR SCORE :{player_score} 🤖 COMPUTER SCORE : {computer_score} MATCH TIE : {match_tie}")
+                break
+else:
+    print("GAME EXITED 🚀")
